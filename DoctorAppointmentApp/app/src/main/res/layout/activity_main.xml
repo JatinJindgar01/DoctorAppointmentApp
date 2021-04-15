@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:src="@drawable/front_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:id="@+id/doctor_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/patient_login">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Login as a Doctor"
+            android:padding="16dp"
+            android:textSize="40sp"
+            android:background="#03A9F4"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="6"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:src="@drawable/login_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/patient_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Login as a patient"
+            android:padding="16dp"
+            android:textSize="40sp"
+            android:background="#03A9F4"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="6"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/login_icon"
+            android:background="#03A9F4"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

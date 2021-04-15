@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "966287491774",
+    "firebase_url": "https://doctorsystem-8a95d.firebaseio.com",
+    "project_id": "doctorsystem-8a95d",
+    "storage_bucket": "doctorsystem-8a95d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966287491774:android:5ec6aa200f3e32b6b894ef",
+        "android_client_info": {
+          "package_name": "com.example.android.doctorsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966287491774-3v9ia9i9c7aqc41vu3t3ao349tdlncpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZtcTQ4cHvwmmRVPv0aA_d7Aqh9xKXLR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966287491774-3v9ia9i9c7aqc41vu3t3ao349tdlncpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

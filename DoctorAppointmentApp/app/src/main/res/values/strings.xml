@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">AuthenticatorApp</string>
+    <string-array name="doctor_type">
+        <item>Allopathic</item>
+        <item>Ayurvedic</item>
+        <item>Homeopathic</item>
+
+    </string-array>
+    <string-array name="degree">
+        <item>MD</item>
+        <item>MBBS</item>
+        <item>BDS</item>
+    </string-array>
+    <string-array name="speciality">
+        <item>Cardiologist</item>
+        <item>Eye Specialist</item>
+        <item>Dentist</item>
+        <item>General Physician</item>
+        <item>Psycatarist</item>
+        <item>Skin Specialist</item>
+    </string-array>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>
