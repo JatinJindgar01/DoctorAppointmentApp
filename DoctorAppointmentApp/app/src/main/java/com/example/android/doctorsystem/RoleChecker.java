@@ -81,7 +81,6 @@ public class RoleChecker extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), DoctorList.class));
             }
         } else {
-            Log.v("in else","fdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
            // FirebaseAuth.getInstance().signOut();//logout
             Toast.makeText(RoleChecker.this, "You are not registered", Toast.LENGTH_SHORT).show();
             //startActivity(new Intent(getApplicationContext(), MainActivity.class));
