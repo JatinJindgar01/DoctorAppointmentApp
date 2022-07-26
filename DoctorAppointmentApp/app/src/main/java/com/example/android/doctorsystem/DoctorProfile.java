@@ -245,8 +245,6 @@ public class DoctorProfile extends AppCompatActivity {
         logout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Log.v("HELLO I am this logout", "hey broOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                 FirebaseAuth.getInstance().signOut();
                 Log.v("HELLO I am this logout", "hey bro");
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
