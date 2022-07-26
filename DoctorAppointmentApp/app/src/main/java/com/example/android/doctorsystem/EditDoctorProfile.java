@@ -49,11 +49,6 @@ public class EditDoctorProfile extends AppCompatActivity {
         final String fullName = data.getStringExtra("fullName");
         String email = data.getStringExtra("email");
         String phone = data.getStringExtra("phone");
-        //String gender = data.getStringExtra("gender");
-       // String registeredId = data.getStringExtra("registeredId");
-//        String doctorType = data.getStringExtra("typeOfDoctor");
-//        String speciality = data.getStringExtra("speciality");
-//        String degree = data.getStringExtra("degree");
         String pincode = data.getStringExtra("pincode");
         String address = data.getStringExtra("address");
         String fee = data.getStringExtra("fee");
@@ -71,11 +66,6 @@ public class EditDoctorProfile extends AppCompatActivity {
         profileEmail = findViewById(R.id.editProfileEmailAddress);
         profilePhone = findViewById(R.id.editProfilePhoneNo);
         profileImageView = findViewById(R.id.editProfileImageView);
-      //  profileGender=findViewById(R.id.editProfileGender);
-      //  profileRegisteredId=findViewById(R.id.editProfileRegisteredId);
-//        profileDoctorType=findViewById(R.id.editProfileDoctorType);
-//        profileSpeciality=findViewById(R.id.editProfileSpeciality);
-//        profileDegree=findViewById(R.id.editProfileDegree);
         profileMorningTime=findViewById(R.id.editProfileMorningTime);
         profileEveningTime=findViewById(R.id.editProfileEveningTime);
         profilePincode=findViewById(R.id.editProfilePincode);
@@ -117,11 +107,6 @@ public class EditDoctorProfile extends AppCompatActivity {
                         Map<String, Object> edited = new HashMap<>();
                         edited.put("email",email);
                         edited.put("fName",profileFullName.getText().toString());
-                        edited.put("phone",profilePhone.getText().toString());
-                       // edited.put("gender",profileGender.getText().toString());
-                       // edited.put("registeredId",profileRegisteredId.getText().toString());
-                       // edited.put("speciality",profileSpeciality.getText().toString());
-                       // edited.put("typeOfDoctor",profileDoctorType.getText().toString());
                         edited.put("pincode",profilePincode.getText().toString());
                         edited.put("address",profileAddress.getText().toString());
                         edited.put("fee",profileFee.getText().toString());
@@ -153,11 +138,6 @@ public class EditDoctorProfile extends AppCompatActivity {
         profileEmail.setText(email);
         profileFullName.setText(fullName);
         profilePhone.setText(phone);
-       // profileGender.setText(gender);
-       // profileRegisteredId.setText(registeredId);
-        //profileDoctorType.setText(doctorType);
-        //profileSpeciality.setText(speciality);
-       // profileDegree.setText(degree);
         profilePincode.setText(pincode);
         profileAddress.setText(address);
         profileFee.setText(fee);
@@ -177,9 +157,6 @@ public class EditDoctorProfile extends AppCompatActivity {
         if(requestCode == 1000){
             if(resultCode == Activity.RESULT_OK){
                 Uri imageUri = data.getData();
-
-                //profileImage.setImageURI(imageUri);
-
                 uploadImageToFirebase(imageUri);
 
 
