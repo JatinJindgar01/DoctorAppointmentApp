@@ -179,7 +179,6 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         } else {
-            Log.v("in else","ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
            FirebaseAuth.getInstance().signOut();//logout
             Toast.makeText(getApplicationContext(), "You are not registered", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
