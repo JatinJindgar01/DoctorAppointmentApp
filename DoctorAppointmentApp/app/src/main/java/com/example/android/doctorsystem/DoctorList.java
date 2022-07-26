@@ -91,10 +91,10 @@ public class DoctorList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.v("before ","dAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      
         setContentView(R.layout.doctor_list);
         fStore = FirebaseFirestore.getInstance();
-        Log.v("after","FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+       
 //        latitudeTextView = findViewById(R.id.lat);
 //        longitTextView = findViewById(R.id.lon);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -111,12 +111,10 @@ public class DoctorList extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     private void getLastLocation() {
         // check if permissions are given
-        Log.v("ddd","ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+        
         if (checkPermissions()) {
-Log.v("aaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             // check if location is enabled
             if (isLocationEnabled()) {
-           Log.v("in","LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
                 // getting last
                 // location from
                 // FusedLocationClient
@@ -124,14 +122,11 @@ Log.v("aaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 mFusedLocationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
                     @Override
                     public void onComplete(@NonNull Task<Location> task) { Location location = task.getResult();
-                                        if (location == null) {
-                                            Log.v("in","elseZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
+                                        if (location == null)
                                             requestNewLocationData();
                                         } else {
-                                            Log.v("QQQQ","QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
                                             longitude = location.getLongitude();
                                             latitude = location.getLatitude();
-                                            Log.v("hhhh","HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
                                             Log.v("the long1", "" + longitude);
                                             Log.v("the lat1", "" + latitude+"and long is"+longitude);
                                             fStore.collection("users")
@@ -179,9 +174,7 @@ Log.v("aaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                                             }
                                                                 //Map<String, Double> hm1 = sortByValue(hmap);
                                                                 Log.v("try", ""+hmap);
-                                                                Log.v("supportactivity", "supporttttttttttttttttttttttttttttttttt");
                                                                 Intent i = new Intent(getApplicationContext(), SupportActivity.class);
-                                                                Log.v("supportactivity", "supporttttttttttttttttttttttttttttttttt");
                                                                 i.putExtra("map", (Serializable) hmap );
                                                                 startActivity(i);
 
@@ -217,7 +210,6 @@ Log.v("aaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         } else {
             // if permissions aren't available,
             // request for permissions
-            Log.v("eeee","eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             requestPermissions();
         }
     }
@@ -280,9 +272,6 @@ Log.v("aaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     // method to requestfor permissions
     private void requestPermissions() {
 
-        Log.v("rrrrrrr","rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
-        Log.v("pid","vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv");
-
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID);
 
     }
@@ -290,7 +279,6 @@ Log.v("aaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     // method to check
     // if location is enabled
     private boolean isLocationEnabled() {
-        Log.v("in ","EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
@@ -298,16 +286,13 @@ Log.v("aaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        Log.v("oooo","ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         Log.v("request ",""+requestCode);
 
         if (requestCode == PERMISSION_ID) {
-            Log.v("iiiii","iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             for(int h=0;h<grantResults.length;h++)
                 Log.v("grrant result of",""+h+" "+grantResults[h]);
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Log.v("uuu","uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
                 getLastLocation();
             }
         }
