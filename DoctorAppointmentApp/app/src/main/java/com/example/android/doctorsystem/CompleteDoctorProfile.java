@@ -170,11 +170,10 @@ public class CompleteDoctorProfile extends AppCompatActivity {
 
 
 
-               Log.v("FFFF","GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
+              
                 userID = fAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = fStore.collection("users").document(userID);
                 HashMap<String,Object> user=(HashMap<String, Object>)intent.getSerializableExtra("user");
-                Log.v("hhh","DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
                 user.put("registeredId",mregisteredId);
                 user.put("gender",mgender);
                 user.put("pincode",mpincode);
