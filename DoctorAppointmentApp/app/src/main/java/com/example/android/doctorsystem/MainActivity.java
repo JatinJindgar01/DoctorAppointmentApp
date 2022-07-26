@@ -25,11 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
-        Log.v("Main activity", "log 1...................................................................");
-
 
         if (fAuth.getCurrentUser() != null) {
-            Log.v("current user check", "in main activity ====================================================");
             userId = fAuth.getCurrentUser().getUid();
             DocumentReference documentReference = fStore.collection("users").document(userId);
 
@@ -41,12 +38,10 @@ public class MainActivity extends AppCompatActivity {
                     Role = documentSnapshot.getString("role");
                     Log.v("Main Activity ", "after extracting role " + Role);
                     if (Role.equals("Doctor")) {
-                        Log.v("Main Activity", "to patient detail ---------------------------------------------==============================");
                         startActivity(new Intent(getApplicationContext(), PatientDetails.class));
                         finish();
                     }
                     if (Role.equals("Patient")) {
-                        Log.v("from register class", "to doctor list-----------------------------------------]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]");
                         startActivity(new Intent(getApplicationContext(), DoctorList.class));
                         finish();
                     }
@@ -55,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             });
         }
-        Log.v("Main Activity ", "current user not present----------------------;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;");
         setContentView(R.layout.activity_main);
 
         LinearLayout doctor_ll = (LinearLayout) findViewById(R.id.doctor_login);
